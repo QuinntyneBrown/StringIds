@@ -8,6 +8,6 @@ namespace StringIds.Core.Services
     {
         public override bool GeneratesTemporaryValues => throw new System.NotImplementedException();
 
-        public override string Next(EntityEntry entry) => $"{Guid.NewGuid()}";
+        public override string Next(EntityEntry entry = null) => $"{Guid.NewGuid()}";
     }
 }

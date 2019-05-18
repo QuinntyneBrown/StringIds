@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace StringIds.Core.Models
+namespace StringIds.Users.Domain.Models
 {
     public interface IAppDbContext
     {

@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>1afcae14-1861-4e9b-bb18-00d726d7b8a1</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\StringIds.Core\StringIds.Core.csproj" />
     <ProjectReference Include="..\StringIds.Domain\StringIds.Domain.csproj" />
+    <ProjectReference Include="..\StringIds.Users.Domain\StringIds.Users.Domain.csproj" />
   </ItemGroup>
 
 </Project>

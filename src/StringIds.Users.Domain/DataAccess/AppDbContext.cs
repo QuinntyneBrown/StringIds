@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using StringIds.Core.Models;
+using StringIds.Users.Domain.Models;
 using StringIds.Core.Services;
 
-namespace StringIds.Domain.DataAccess
+namespace StringIds.Users.Domain.DataAccess
 {
     public class AppDbContext : DbContext, IAppDbContext
     {
