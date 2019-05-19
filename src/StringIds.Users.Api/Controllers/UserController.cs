@@ -32,6 +32,7 @@ namespace StringIds.Users.Api.Controllers
                 return BadRequest(ModelState);
 
             var result = await _service.InsertAsync(user);
+            
             return Created($"/api/users/{result.UserId}", result);
         }
 
@@ -41,8 +42,9 @@ namespace StringIds.Users.Api.Controllers
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var result = await _service.InsertBatchAsync(users.Data);
-            return Ok(result);
+            await _service.InsertBatchAsync(users.Data);
+
+            return Ok();
         }
     }
 }

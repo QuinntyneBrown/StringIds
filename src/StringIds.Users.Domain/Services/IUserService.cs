@@ -8,6 +8,6 @@ namespace StringIds.Users.Domain.Services
     {
         Task<User> GetByIdAsync(string id);
         Task<User> InsertAsync(User user);
-        Task<int> InsertBatchAsync(IEnumerable<User> users);
+        Task InsertBatchAsync(IEnumerable<User> users);
     }
 }

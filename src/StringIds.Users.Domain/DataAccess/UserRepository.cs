@@ -12,19 +12,19 @@ namespace StringIds.Users.Domain.DataAccess
             _context = context;
         }
 
-        public Task<User> GetByIdAsync(string id)
+        public async Task<User> GetByIdAsync(string id)
         {
-            throw new System.NotImplementedException();
+            return await _context.Users.FindAsync(id);
         }
 
-        public Task<bool> InsertAsync(User user)
+        public async Task<User> InsertAsync(User user)
         {
-            throw new System.NotImplementedException();
+            return (await _context.Users.AddAsync(user)).Entity;
         }
 
-        public Task<int> InsertBatchAsync(IEnumerable<User> users)
+        public async Task InsertBatchAsync(IEnumerable<User> users)
         {
-            throw new System.NotImplementedException();
+            await _context.Users.AddRangeAsync(users);
         }
     }
 }

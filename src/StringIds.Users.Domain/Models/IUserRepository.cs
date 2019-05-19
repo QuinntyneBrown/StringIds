@@ -6,7 +6,7 @@ namespace StringIds.Users.Domain.Models
     public interface IUserRepository
     {
         Task<User> GetByIdAsync(string id);
-        Task<bool> InsertAsync(User user);
-        Task<int> InsertBatchAsync(IEnumerable<User> users);
+        Task<User> InsertAsync(User user);
+        Task InsertBatchAsync(IEnumerable<User> users);
     }
 }

@@ -45,10 +45,7 @@ namespace StringIds.Users.Api
                 app.UseHsts();
             }
 
-            app.UseHealthChecks("/health", new HealthCheckOptions
-            {
-
-            });
+            app.UseHealthChecks("/health");
 
             app.UseCors();
 

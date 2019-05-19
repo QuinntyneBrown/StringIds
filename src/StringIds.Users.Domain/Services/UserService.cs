@@ -21,12 +21,12 @@ namespace StringIds.Users.Domain.Services
 
         public async Task<User> InsertAsync(User user)
         {
-            return null;
+            return await _repo.InsertAsync(user);
         }
 
-        public async Task<int> InsertBatchAsync(IEnumerable<User> users)
+        public async Task InsertBatchAsync(IEnumerable<User> users)
         {
-            throw new System.NotImplementedException();
+            await _repo.InsertBatchAsync(users);
         }
     }
 }

@@ -1,6 +1,9 @@
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration.EnvironmentVariables;
 using Microsoft.Extensions.Hosting;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace StringIds.Users.Api
 {
@@ -9,14 +12,24 @@ namespace StringIds.Users.Api
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateWebHostBuilder(args).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args)
+        {
+            var builder = WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration((hostingContext, config) =>
                 {
-                    webBuilder.UseStartup<Startup>();
-                });
+                    var envVarConfig = (EnvironmentVariablesConfigurationSource)config.Sources
+                        .FirstOrDefault(x => x.GetType() == typeof(EnvironmentVariablesConfigurationSource));
+
+                    if (envVarConfig != null)
+                        envVarConfig.Prefix = "STRINGIDS-USER-";
+
+                })
+                .UseStartup<Startup>();
+
+            return builder;
+        }
     }
 }
