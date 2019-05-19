@@ -15,7 +15,7 @@ namespace StringIds.Users.Domain.DataAccess
 
             modelBuilder.Entity<User>()
                 .Property(x => x.UserId)
-                .HasValueGenerator<GuidGeneratorService>();
+                .HasValueGenerator<GuidValueGenerator>();
 
             base.OnModelCreating(modelBuilder);
         }

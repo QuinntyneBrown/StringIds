@@ -3,7 +3,7 @@ using System;
 
 namespace StringIds.Core.Services
 {
-    public interface ILocalTimeService
+    public interface IMachineTimeService
     {
         DateTime Now { get; }
     }

@@ -29,8 +29,7 @@ namespace StringIds.Users.Api
             services.AddSingleton<IUserRepository, UserRepository>();
 
             // Services 
-            services.AddSingleton<ILocalTimeService, LocalTimeService>();
-            services.AddSingleton<IGuidGeneratorService, GuidGeneratorService>();
+            services.AddSingleton<IMachineTimeService, MachineTimeService>();
             services.AddUserService(config);
         }
 

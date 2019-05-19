@@ -4,7 +4,7 @@ using System;
 
 namespace StringIds.Core.Services
 {
-    public class GuidGeneratorService : ValueGenerator<string>, IGuidGeneratorService
+    public class GuidValueGenerator : ValueGenerator<string>
     {
         public override bool GeneratesTemporaryValues => throw new System.NotImplementedException();
 
