@@ -1,11 +1,12 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Diagnostics;
 
-namespace StringIds.Api
+namespace StringIds.Users.Api
 {
     public class Startup
     {
@@ -43,6 +44,11 @@ namespace StringIds.Api
             {
                 app.UseHsts();
             }
+
+            app.UseHealthChecks("/health", new HealthCheckOptions
+            {
+
+            });
 
             app.UseCors();
 

@@ -22,7 +22,7 @@ namespace StringIds.Users.Domain.DataAccess
             throw new System.NotImplementedException();
         }
 
-        public Task<int> InsertBatchAsync(IEnumerable<User> trades)
+        public Task<int> InsertBatchAsync(IEnumerable<User> users)
         {
             throw new System.NotImplementedException();
         }

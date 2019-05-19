@@ -4,7 +4,7 @@ using StringIds.Users.Domain.Models;
 using StringIds.Users.Domain.Services;
 using System.Threading.Tasks;
 
-namespace StringIds.Api.Controllers
+namespace StringIds.Users.Api.Controllers
 {
     [Route("api/users")]
     public class UserController: ControllerBase

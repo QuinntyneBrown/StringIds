@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StringIds.Core.Services;
 using StringIds.Users.Domain.Configuration;
@@ -6,7 +7,7 @@ using StringIds.Users.Domain.DataAccess;
 using StringIds.Users.Domain.Models;
 using StringIds.Users.Domain.Services;
 
-namespace StringIds.Api
+namespace StringIds.Users.Api
 {
     public static class Dependencies
     {
@@ -19,6 +20,12 @@ namespace StringIds.Api
             services.Configure<UserServiceOptions>(config.GetSection("UserService"));
 
             // Data Access
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options
+                .UseSqlServer(config["ConnectionStrings:UsersDatabase"], b => b.MigrationsAssembly("StringsIds.Users.Domain"));
+            });
+
             services.AddSingleton<IUserRepository, UserRepository>();
 
             // Services 

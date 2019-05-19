@@ -7,6 +7,6 @@ namespace StringIds.Users.Domain.Models
     {
         Task<User> GetByIdAsync(string id);
         Task<bool> InsertAsync(User user);
-        Task<int> InsertBatchAsync(IEnumerable<User> trades);
+        Task<int> InsertBatchAsync(IEnumerable<User> users);
     }
 }
